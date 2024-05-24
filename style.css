@@ -1,0 +1,428 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: white;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #000;
+}
+
+#nav{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 99 ;
+}
+.cursor{
+z-index: 999;
+	position: fixed;
+	background: #2696E8;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	pointer-events: none;
+	box-shadow: 0 0 20px #2696E8,
+				0 0 60px #2696E8,
+				0 0 100px #2696E8;
+	animation: colors 5s infinite;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+@keyframes colors {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+
+.cursor:before {
+	content: '';
+	position: absolute;
+	background: #2696E8;
+	width: 50px;
+	height: 50px;
+	opacity: 0.2;
+	transform: translate(-50%, -50%);
+	display: block;
+	border-radius: 50%;
+}
+#nav img{
+    height: 90px;
+    width: 90px;
+    margin-left: 100px;
+}
+#nav h3{
+    margin-left: 45px;
+    font-weight: 600;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position:fixed;
+    filter: brightness(80%);
+    z-index: -1;
+}
+#main{
+    position: relative;
+
+}
+#pehla{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 350px;
+    left: 320px;
+   z-index: 10;
+}
+#pehla h1{
+font-size: 130px;
+font-weight: 900;
+
+}
+#pehla h1::before{
+    content: "EAT. DRINK. PLAY";
+    position: absolute;
+    top: -3px;
+    left: -4px;
+    color: black;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+}
+#pehla h2{
+    font-size: 30px;
+    margin-left: 250px;
+    padding-top: 10px;
+}
+#pehla p{
+    font-size: 20px;
+   margin-right: 400px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+#dusra{
+    height: 130vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;
+    position: absolute;
+    top: 55%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 110px;
+    font-weight: 800;
+    margin-right: 40px;
+    color: transparent;
+    -webkit-text-stroke: 2px #95C11E;
+    transition: all linear 0.5s;
+}
+#scroller h4:hover{
+    color: #95C11E;
+}
+#scroller-1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+    position: relative;
+    bottom: 350px;
+    z-index: 10;
+}
+#about-us-in h3{
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 30px;
+    
+}
+#about-us-in p{
+    font-size: 19px;
+    text-align: center;
+    font-weight: 600;
+    padding: 0px 120px;
+    line-height: 30px;
+}
+#about-us img{
+    border-radius: 20px;
+}
+#cards-container{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    bottom: 300px;
+    z-index: 10;
+}
+.card{
+    height: 80%;
+    width: 23%;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+#card1{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+}
+#card2{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+
+}
+#card3{
+    background-image: url("https://images.unsplash.com/photo-1593282153762-a41e3cceb06c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 20px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+.overlay:hover{
+    opacity: 1;
+}
+.overlay h4{
+    color: black;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.overlay p{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+#mm{
+    padding-left: 40px;
+}
+
+#green-div{
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left bottom,green,#b4f010);
+    position: relative;
+    bottom: 200px;
+}
+#green-div h4{
+    font-size: 23px;
+    width: 35%;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 15%;
+}
+#page3{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#page3 p{
+    font-size: 27px;
+font-weight: 900;
+    width: 55%;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+#page3 img{
+    position: absolute;
+}
+#colon1{
+    left: 17%;
+    top: 12%;
+}
+#colon2{
+    right: 17%;
+    bottom: 12%;
+}
+#danda{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#ball{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    bottom: 15px;
+}
+#pot{
+    height: 3px;
+    width: 30px;
+    background-color: white;
+}
+#line{
+    height: 180px;
+    position: relative;
+    left: 27px;
+    bottom: 178px;
+    width: 4px;
+    background-color:white;
+}
+#line i{
+    font-size: 30px;
+}
+#page4{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    bottom: 100px;
+}
+.elem{
+    height: 200px;
+    width: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    
+}
+.elem:hover{
+    transform: rotate3d(1,1,0,20deg);
+}
+.elem img{
+    height: 200px;
+    width: 500px;
+    object-fit: cover;
+    scale:1.1;
+    
+}
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.6s;
+}
+.elem:hover h2{
+    color: white;
+    background-color: transparent;
+}
+.elem:hover img{
+    scale: 1;
+}
+#page4 h1{
+    font-size: 112px;
+    position: absolute;
+    top: -50px;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    -webkit-text-stroke: 2px white;
+}
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(to left bottom,green,#b4f010);
+    position: relative;
+}
+#aa{
+    position: relative;
+   right: 340px;
+}
+#f1 img{
+    position: absolute;
+    left: 113px;
+    bottom: 200px;
+}
+#f2{
+    position: absolute;
+    left: 500px;
+}
+#f3{
+    position: absolute;
+    left: 900px;
+}
+#f4{
+    position: absolute;
+    left: 1300px;
+}
+.mmm h3{
+    font-size: 25px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #000;
+}
+#f4 h4{
+    font-size: 20px;
+    color: #000;
+}
